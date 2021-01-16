@@ -7,10 +7,14 @@
 - Tüm sayfalar ortak header ve footer a sahip olacak. 
 - Responsive destekli olacak
 
-## Teknoloji 
+## Teknoloji (İstenilen)
 - Asp.Net Core MVC ve Asp.Net Core Rest API kullanılacak, .Net Core 3.1 veya Net Framework 5 kullanılabilir, 
 - Temiz Kod (Clean Architecture) yaklaşımına uygun olacak 
 - DB olarak sizin tercih ettiğiniz bir db’yi kullanabilirsiniz, Postgresql tercih sebebidir 
 - Visual Studio ile çalıştırılabilecek, 
 - CSS Kütüphanesi olarak bootstrap kullanabilirsiniz. 
 - Jquery veya Blazor gibi bir JS kütüphanesi veya framework-u kullanılabilir 
+
+## Teknoloji (Kullanılan)
+- WebUI: Asp.Net Core MVC (.Net 5)
+- MW: Asp.Net Core Rest API (.Net 5)
