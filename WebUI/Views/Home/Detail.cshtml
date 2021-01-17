@@ -1,0 +1,56 @@
+﻿@model WebUI.Models.Person
+
+@{
+    ViewData["Title"] = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <a href="javascript:history.go(-1)" class="float-right my-auto iconBack">
+        <i class="bi bi-arrow-left-circle" style="font-size: 2rem;color: #000000;" title="Geri Dön"></i>
+    </a>
+    <h1>Detay</h1>
+</div>
+<hr class="mb-5" />
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <dl class="row">
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.ID)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.ID)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Surname)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Blood)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Blood)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+        </dl>
+    </div>
+</div>

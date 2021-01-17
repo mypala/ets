@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebUI.Models.Person>
+
+@{
+    ViewData["Title"] = "Kişi Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <a asp-action="Create" class="float-right my-auto iconNew">
+        <i class="bi bi-person-plus" style="font-size: 2rem;color: #000000;" title="Yeni Ekle"></i>
+    </a>
+    <h1>Liste</h1>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover  text-nowrap">
+        <thead>
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Surname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Blood)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Blood)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td class="text-center">
+                        <a href="@Url.Action("Detay", new { id = item.ID })" class="iconDetail">
+                            <i class="bi bi-person" style="font-size: 1.2rem;color: #000000;" title="Detay"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

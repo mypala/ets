@@ -1,0 +1,73 @@
+﻿@model WebUI.Models.Person
+
+@{
+    ViewData["Title"] = "Yeni Kişi Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <a href="javascript:history.go(-1)" class="float-right my-auto iconBack">
+        <i class="bi bi-arrow-left-circle" style="font-size: 2rem;color: #000000;" title="Geri Dön"></i>
+    </a>
+    <h1>Yeni Kayıt</h1>
+</div>
+<hr class="mb-5" />
+<div class="m-auto col-12 col-lg-6 col-md-10">
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewBag.Error
+        </div>
+    }
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @ViewBag.Message
+        </div>
+    }
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Surname" class="control-label"></label>
+                    <input asp-for="Surname" class="form-control" />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Blood" class="control-label"></label>
+            <select asp-for="Blood" asp-items="Html.GetEnumSelectList<BloodGroup>()" class="form-control">
+                <option selected="selected" value="">Seçiniz</option>
+            </select>
+            <span asp-validation-for="Blood" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber" class="control-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address" class="control-label"></label>
+            <textarea asp-for="Address" class="form-control"></textarea>
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-block mb-4" value="Kaydet" />
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
